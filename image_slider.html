@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+  
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 300px;
+    
+    
+}
+
+.slides img {
+    width: 300px;
+flex:1;
+}
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <img src="/burger1.JPG" alt="Image 1" >
+            <img src="/burger2.JPG" alt="Image 2" >
+            <img src="/burger3.JPG" alt="Image 3">
+        </div>
+    </div>
+    <script>
+      let index = 0;
+
+function showSlide() {
+    const slides = document.querySelector('.slides');
+    index++;
+    if (index > 3) {
+        index = 0;
+    }
+    slides.style.transform = `translateX(${-index * 100}%)`; 
+}
+
+setInterval(showSlide, 3000);
+
+    </script>
+</body>
+</html>
